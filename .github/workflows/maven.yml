@@ -24,7 +24,7 @@ jobs:
      - name: Trigger cucumber tests
        uses: convictional/trigger-workflow-and-wait@v1.6.1
        with:
-          owner: kartaly-e
+          owner: KartalY-E
           repo: cucumber-10-min
           github_token: ${{ secrets.G_ACCESS_TOKEN }}
           workflow_file_name: maven.yml
