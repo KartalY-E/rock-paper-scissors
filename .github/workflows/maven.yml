@@ -1,10 +1,9 @@
 name: Github actions test
-
 on:
   push:
     branches: [ master ]
 jobs:
-  build:
+  trigger_workflow:
     runs-on: ubuntu-latest
     steps:
      - name: Checkout master branch Github
@@ -22,11 +21,15 @@ jobs:
        run: |
         cd target
         ls -a
-     - name: Run cucumber tests
+     - name: Trigger cucumber tests
        uses: convictional/trigger-workflow-and-wait@v1.6.1
        with:
           owner: kartaly-e
           repo: cucumber-10-min
           github_token: ${{ secrets.G_ACCESS_TOKEN }}
           workflow_file_name: maven.yml
-          ref: master
+          ref: main
+          wait_interval: 10
+          propagate_failure: true
+          trigger_workflow: true
+          wait_workflow: true
