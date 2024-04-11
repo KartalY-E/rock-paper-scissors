@@ -22,7 +22,7 @@ jobs:
        run: |
         cd target
         ls -a
-     - name: Run cucumber testss
+     - name: Run cucumber tests
        uses: convictional/trigger-workflow-and-wait@v1.3.0
        with:
           owner: KartalY-E
