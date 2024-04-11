@@ -23,9 +23,9 @@ jobs:
         cd target
         ls -a
      - name: Run cucumber tests
-       uses: convictional/trigger-workflow-and-wait@v1.3.0
+       uses: convictional/trigger-workflow-and-wait@v1.6.1
        with:
-          owner: kartaly-e
+          owner: keithconvictional
           repo: cucumber-10-min
           github_token: ${{ secrets.G_ACCESS_TOKEN }}
           workflow_file_name: maven.yml
